@@ -80,8 +80,9 @@ public abstract class Creature extends Entity {
 
                 if (maxStep >= 0) {
                     map.placeEntity(pathToTarget.get(getSpeed() - 1), subject);
-                    map.removeEntity(startPosition);
-                } else map.placeEntity(pathToTarget.get(pathToTarget.size() - 1), subject);
+                } else {
+                    map.placeEntity(pathToTarget.get(pathToTarget.size() - 1), subject);
+                }
                 map.removeEntity(startPosition);
             } else {
                 pathlessCreaturesCounter++;
