@@ -1,14 +1,14 @@
-#Simulation:video_game:
+# Simulation:video_game:
 
 This project demonstrate a virtual step-by-step wild 2D world comprises herbivores, predators, trees, grass and rocks.
 
-##Description:memo:
+## Description:memo:
 
 Game map is a grid of 15x15 cells with various objects randomly located on it.
 
 All objects on map are divided into 2 groups: creatures and entites.
 
-###Creatures:cat:
+### Creatures:cat:
 
 The creatures include predators and herbivores. Each creature has a target that it seeks to eat.
 
@@ -28,7 +28,7 @@ Creatures uses the A* (A star) algorithm to find a path to the nearest target.
 
 More about algorithm [here](https://vitalissius.github.io/A-Star-Pathfinding-for-Beginners/).
 
-###Entities:cactus:
+### Entities:cactus:
 
 There are the following static objects on map: grass, trees, rocks.
 
@@ -53,11 +53,11 @@ For example, a herbivore may be blocked by trees and rocks, so that it has no wa
 User console have an endless mode switcher, which allows user to turn on/off this mode. If mode is enabled, creatures and their targets will spawn up to max limit (depends on the map size) every time they reach min limit. Thus, the game will last contineously until the mode is disabled or game is terminated manually.
 
 
-##User interface & view:computer:
+## User interface & view:computer:
 
 The program has a console view with a several user commands:
 
-![Game view](https://ibb.co/vvRSj3j)
+![Game view](https://github.com/Dimas-Ukimas/Simulation/blob/master/src/main/resources/Game%20view.png)
 
 Object icons:
 - ¥ - grass:herb:
@@ -68,7 +68,7 @@ Object icons:
 
 
 
-##Usage:rocket:
+## Usage:rocket:
 
 In order to launch the program you need to do next steps:
 1. Download ZIP archive with code files and extract its content to your computer
