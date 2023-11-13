@@ -38,6 +38,12 @@ public class WorldMap {
         worldMap.remove(cell);
     }
 
+    public void moveEntity(Cell from, Cell to){
+       Entity entity = worldMap.get(from);
+       removeEntity(from);
+       placeEntity(to, entity);
+    }
+
     public Entity getEntityByCell(Cell cell) {
         return worldMap.get(cell);
     }

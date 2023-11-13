@@ -79,11 +79,10 @@ public abstract class Creature extends Entity {
                 int maxStep = pathToTarget.size() - getSpeed();
 
                 if (maxStep >= 0) {
-                    map.placeEntity(pathToTarget.get(getSpeed() - 1), subject);
+                    map.moveEntity(startPosition,pathToTarget.get(getSpeed() - 1) );
                 } else {
-                    map.placeEntity(pathToTarget.get(pathToTarget.size() - 1), subject);
+                    map.moveEntity(startPosition, pathToTarget.get(pathToTarget.size() - 1));
                 }
-                map.removeEntity(startPosition);
             } else {
                 pathlessCreaturesCounter++;
             }
