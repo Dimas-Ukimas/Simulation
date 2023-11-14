@@ -1,7 +1,6 @@
 package com;
 
 
-
 import com.actions.*;
 import com.map.Render;
 import com.map.WorldMap;

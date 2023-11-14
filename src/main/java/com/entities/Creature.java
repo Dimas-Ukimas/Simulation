@@ -12,18 +12,9 @@ public abstract class Creature extends Entity {
     private Class<? extends Entity> target;
     private static final Set<Class<? extends Creature>> heirClasses = new HashSet<>();
     private static final Set<Class<? extends Entity>> targetsClasses = new HashSet<>();
-    private static int pathlessCreaturesCounter;
 
     public Creature() {
         heirClasses.add(this.getClass());
-    }
-
-    public static int getPathlessCreaturesCounter() {
-        return pathlessCreaturesCounter;
-    }
-
-    public static void setPathlessCreaturesCounter(int pathlessCreaturesCounter) {
-        Creature.pathlessCreaturesCounter = pathlessCreaturesCounter;
     }
 
     public static Set<Class<? extends Entity>> getTargetsClasses() {
@@ -62,7 +53,7 @@ public abstract class Creature extends Entity {
         this.hitPoints = hitPoints;
     }
 
-    public void makeMove(Creature subject, Cell startPosition, WorldMap map) {
+    public boolean makeMove(Creature subject, Cell startPosition, WorldMap map) {
 
         Map<Cell, Entity> adjacentTargets = getAdjacentTargets(startPosition, map, getTarget());
 
@@ -71,6 +62,7 @@ public abstract class Creature extends Entity {
             Random rn = new Random();
             int randomNum = rn.nextInt(targetPositions.size());
             consume(targetPositions.get(randomNum), map);
+            return true;
         } else {
             PathFinder pathFinder = new PathFinder();
             List<Cell> pathToTarget = pathFinder.findPath(startPosition, getTarget(), map);
@@ -79,12 +71,13 @@ public abstract class Creature extends Entity {
                 int maxStep = pathToTarget.size() - getSpeed();
 
                 if (maxStep >= 0) {
-                    map.moveEntity(startPosition,pathToTarget.get(getSpeed() - 1) );
+                    map.moveEntity(startPosition, pathToTarget.get(getSpeed() - 1));
                 } else {
                     map.moveEntity(startPosition, pathToTarget.get(pathToTarget.size() - 1));
                 }
+                return true;
             } else {
-                pathlessCreaturesCounter++;
+                return false;
             }
         }
     }
