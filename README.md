@@ -39,7 +39,7 @@ Rocks and trees serves only as a natural obstacles, creatures cannot interact wi
 There are few scenarios for the end of the game:
 1. Predators exterminates all herbivores.
 2. Herbivores extirpates all grass.
-3. Dead lock (creatures have relevant targets on map, but they unreachable).
+3. Dead lock (creatures have relevant targets on map, but they are unreachable).
 4. Game loop is terminated manually by the user.
 
 **About dead lock:lock::**
