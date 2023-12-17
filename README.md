@@ -13,7 +13,7 @@ All objects on map are divided into 2 groups: creatures and entites.
 The creatures include predators and herbivores. Each creature has a target that it seeks to eat.
 
 Creatures can spend their turn on 2 actions:
-- Move to target:dart:
+- Move to target :dart:
 - Eat (or attack) target :yum:
 
 Creatures can move only orthogonally. In order to eat (attack) target, it needs to stand on adjacent cell to its food.
